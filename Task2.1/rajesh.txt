@@ -1,4 +1,0 @@
-Name		Phone Number		Email Address
-cat		3456789		wertyuioiuytrew
-apple		45678909876		asdfghjklkjhgfd
-dog		3456789098765		fghjklkjhgfhgfdfghj

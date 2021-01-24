@@ -1,4 +1,1 @@
-﻿  Source.cpp
-D:\C++\Task5.2\Source.cpp(226,11): warning C4101: 'y': unreferenced local variable
-D:\C++\Task5.2\Source.cpp(226,8): warning C4101: 'x': unreferenced local variable
-  Task5.2.vcxproj -> D:\C++\Task5.2\Debug\Task5.2.exe
+﻿  Task5.2.vcxproj -> D:\C++\Task5.2\Debug\Task5.2.exe

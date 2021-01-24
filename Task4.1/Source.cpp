@@ -20,6 +20,7 @@ void printarray(U* array, int N)
 
 int main()
 {
+	srand(time(0));
 	int* I;
 	I = new int[10];
 	for (int i = 0; i < 10; i++)

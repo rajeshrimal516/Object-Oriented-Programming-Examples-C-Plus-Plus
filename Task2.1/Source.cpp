@@ -38,7 +38,7 @@ int main()
 	string n,p,e, filename;
 	Contact phonebook[3];
 
-	cout << "Enter the detail (Name, Phone Number and Email Address) of the three people:" << endl;
+	cout << "Enter the detail (First Name, Phone Number and Email Address) of the three people:" << endl;
 	for (int i = 0; i < 3; i++)
 	{
 		cin >> n;

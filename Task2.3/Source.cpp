@@ -26,13 +26,6 @@ int main()
 		int y = index(b);
 		int z = index(c);
 
-	/*	for (int i = 0; i < 6; i++)
-		
-		{
-			cout <<"c["<<i<<"]=" <<(c[i])<<endl;
-			cout << "c[" << i << "]=" << sizeof("Rimal") << endl;
-		}*/
-
 		cout << "Integer array a[] smallest Index=" << x << endl;
 		cout << "Double array b[] smallest Index=" << y << endl;
 		cout << "String array c[] smallest Index=" << z << endl;
