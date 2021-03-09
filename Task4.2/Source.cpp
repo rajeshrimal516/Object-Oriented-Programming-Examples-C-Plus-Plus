@@ -10,9 +10,9 @@ class LIFO_stack
 
 public:
 	LIFO_stack(int size = 100);
-	void insertion(U);
-	U extraction();
-	U peeking();
+	void insert(U);
+	U extract();
+	U peek();
 };
 
 template <class U>
@@ -24,21 +24,21 @@ LIFO_stack<U>::LIFO_stack(int size)
 }
 
 template <class U>
-void LIFO_stack<U>::insertion(U x)
+void LIFO_stack<U>::insert(U x)
 {
 	cout << "Inserting " << x << endl;
 	Array[++last_in_element] = x;
 }
 
 template <class U>
-U LIFO_stack<U>::extraction()
+U LIFO_stack<U>::extract()
 {
-	cout << "Extracting " << peeking() << endl;
+	cout << "Extracting " << peek() << endl;
 	return Array[last_in_element--];
 }
 
 template <class U>
-U LIFO_stack<U>::peeking()
+U LIFO_stack<U>::peek()
 {
 		return Array[last_in_element];
 }
@@ -55,40 +55,40 @@ int main()
 	
 	for (int i = 0; i < 10; i++)
 	{
-	cout << "Real number insertion" << endl;
-	real_data.insertion((double)rand() / RAND_MAX);
+	cout << "Real number insert" << endl;
+	real_data.insert((double)rand() / RAND_MAX);
 	cout << endl;
 	cout << "Copying real number to another LIFO_stack" << endl;
-	real_data_copy.insertion(real_data.peeking());
+	real_data_copy.insert(real_data.peek());
 	cout << endl;
 	}
 
 	cout << endl;
-	cout << "Integer insertion" << endl;
+	cout << "Integer insert" << endl;
 	for (int i = 0; i < 5; i++)
 	{
 		
-	int_data.insertion((int)rand());
+	int_data.insert((int)rand());
 	}
 	cout << endl;
 
-	cout << "Real number Extraction" << endl;
+	cout << "Real number extract" << endl;
 	for (int i = 0; i < 10; i++)
 	{
-		real_data.extraction();
+		real_data.extract();
 	}
 	cout << endl;
 
-	cout << "Integer Extraction" << endl;
+	cout << "Integer extract" << endl;
 	for (int i = 0; i < 5; i++)
 	{
-		int_data.extraction();
+		int_data.extract();
 	}
 	cout << endl;
 	cout << "Removing copied real number from duplicate LIFO_stack" << endl;
 	for (int i = 0; i < 10; i++)
 	{
-		real_data_copy.extraction();
+		real_data_copy.extract();
 	}
 	return 0;
 }

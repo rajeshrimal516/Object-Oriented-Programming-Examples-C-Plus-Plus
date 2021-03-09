@@ -2,3 +2,5 @@ C:\Users\ASUS\source\repos\Task1.2\Debug\Task1.2.exe
 C:\Users\ASUS\source\repos\Task1.2\Debug\Task1.2.pdb
 D:\C++\Task1.2\Debug\Task1.2.exe
 D:\C++\Task1.2\Debug\Task1.2.pdb
+E:\C-Tasks\Task1.2\Debug\Task1.2.exe
+E:\C-Tasks\Task1.2\Debug\Task1.2.pdb

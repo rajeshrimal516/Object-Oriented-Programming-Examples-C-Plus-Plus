@@ -6,7 +6,7 @@ class Die
     int dice;
 
 public:  
-    Die() :dice(1) { }
+    Die() { setDie(1);}
     Die(int x) { setDie(x); }
     void rolling()
     {

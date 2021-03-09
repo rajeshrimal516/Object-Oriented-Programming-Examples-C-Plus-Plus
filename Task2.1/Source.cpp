@@ -9,7 +9,7 @@ class Contact {
 	string phone_number;
 	string email;
 public:
-	Contact() {}
+	Contact() {setdetails("NAME","PHONE","EMAIL");}
 	Contact(string Name, string Phone, string Email) {
 		setdetails(Name, Phone, Email);
 	}

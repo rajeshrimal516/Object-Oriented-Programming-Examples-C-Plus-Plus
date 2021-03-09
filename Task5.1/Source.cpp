@@ -1,21 +1,22 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-class Exception
+class GeoException
 {
-    float A, B, C;
+	double A;
+	double B;
+	double C;
 
-public:  Exception() {}
-      Exception(float x, float y, float z)
-      {
-          A = x;
-          B = y;
-          C = z;
-      }
-
-      float geta() { return A; }
-      float getb() { return B; }
-      float getc() { return C; }
+public:		GeoException() : A(0), B(0), C(0) { };
+public:		GeoException(double a, double b, double c) : A(a), B(b), C(c)
+			{
+				A = a;
+				B = b;
+				C = c;
+			}
+public:		double getA() { return A; }
+public:		double getB() { return B; }
+public:		double getC() { return C; }
 };
 class Triangle
 {
@@ -23,9 +24,9 @@ class Triangle
 public:
     Triangle()
     {
-        a = 5;
-        b = 5;
-        c = 10;
+        a = 0;
+        b = 0;
+        c = 0;
     }
 
     Triangle(float x, float y, float z)
@@ -34,8 +35,8 @@ public:
         {
             if ((x + y <= z || x + z <= y || y + z <= x || x == 0 || y == 0 || z == 0))
             {
-                Exception geoexception(x, y, z);
-                throw(geoexception);
+                GeoException geoexception(x, y, z);
+                throw geoexception;
             }
             else
             {
@@ -45,14 +46,17 @@ public:
             }
         }
 
-        catch (Exception geoexcept)
+        catch (GeoException exp)
 
         {
-            cout << "Triangle with sides " << geoexcept.geta() << " ," << geoexcept.getb() << " ," << geoexcept.getc() << " is not possible. Please try again" << endl;
+            cout << "Triangle with sides " << exp.getA() << " ," << exp.getB() << " ," << exp.getC() << " is not possible. Please try again" << endl;
         }
 
     }
 public:
+	double geta() { return a; }
+	double getb() { return b; }
+	double getc() { return c; }
 
     float circumferance()
     {
@@ -65,14 +69,18 @@ public:
 
     }
 
-    bool checkrectangular(float a, float b, float c)
+    bool checkrectangular()
     {
-        if ((a * a) == (b * b) + (c * c) || (b * b) == ((c * c) + (a * a)) || (c * c) == ((a * a) + (b * b)))
+        double a = geta();
+        double b = getb();
+        double c = getc();
+           
+        if ( (a * a == b * b + c * c) || (b * b == c * c + a * a) || (c * c == a * a + b * b) )
         {
             return true;
         }
         else
-            return true;
+            return false;
     }
 
 };
@@ -82,28 +90,31 @@ int main()
     float x, y, z;
     Triangle Triangle1(7, 3, 9);
     Triangle Triangle2(10, 10, 10);
-    cout << "Enter the sides of the triangle 3:" << endl;
-    cin >> x;
-    cin >> y;
-    cin >> z;
-    Triangle Triangle3(x, y, z);
-    bool check1 = Triangle1.checkrectangular(x, y, z);
+
+    bool check1 = Triangle1.checkrectangular();
     if (check1 == true)
         cout << "The Triangle 1 (7,3,9) is rectangular" << endl;
     else
         cout << "The Triangle 1 (7,3,9) is not rectangular" << endl;
 
-    bool check2 = Triangle2.checkrectangular(x, y, z);
+    bool check2 = Triangle2.checkrectangular();
     if (check2 == true)
         cout << "The Triangle 2 (10,10,10) is rectangular" << endl;
     else
         cout << "The Triangle 2 (10,10,10) is not rectangular" << endl;
 
-    bool check3 = Triangle3.checkrectangular(x, y, z);
+    cout << "Enter the sides of the triangle 3:" << endl;
+    cin >> x;
+    cin >> y;
+    cin >> z;
+    Triangle Triangle3(x, y, z);
+
+    bool check3 = Triangle3.checkrectangular();
     if (check3 == true)
         cout << "The Triangle 3(" << x << "," << y << "," << z << ") is rectangular" << endl;
     else
         cout << "The Triangle 3 is not rectangular" << endl;
+
     cout << "Circumferance of 1st triangle is: " << Triangle1.circumferance() << endl;
     cout << "Circumferance of 2nd triangle is: " << Triangle2.circumferance() << endl;
     if (Triangle1.area() > Triangle2.area())

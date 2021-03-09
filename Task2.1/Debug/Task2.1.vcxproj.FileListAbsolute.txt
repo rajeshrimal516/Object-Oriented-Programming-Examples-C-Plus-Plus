@@ -1,2 +1,4 @@
 D:\C++\Task2.1\Debug\Task2.1.exe
 D:\C++\Task2.1\Debug\Task2.1.pdb
+E:\C-Tasks\Task2.1\Debug\Task2.1.exe
+E:\C-Tasks\Task2.1\Debug\Task2.1.pdb

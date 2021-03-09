@@ -8,7 +8,7 @@ class Complex {
 	float real = 0;
 	float img = 0;
 public:
-	Complex() { }
+	Complex() { setRealImg(0,0); }
 	Complex(float real, float img) {
 		setRealImg(real, img);
 	}

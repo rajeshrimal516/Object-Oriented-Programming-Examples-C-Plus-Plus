@@ -5,7 +5,7 @@ class Point2D {
 	float x;
 	float y;
 public:
-	Point2D() {}
+	Point2D() {setXY_coordinate(0,0);}
 	Point2D(float X, float Y)
 	{
 		setXY_coordinate(X, Y);

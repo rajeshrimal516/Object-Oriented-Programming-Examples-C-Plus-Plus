@@ -2,7 +2,7 @@
 using namespace std;
 
 class Prepaid_card {
-public: float amount;
+private: float amount;
 
 public: Prepaid_card() { amount = 0; }
 		Prepaid_card(float x)
@@ -24,30 +24,36 @@ public: Prepaid_card() { amount = 0; }
 			cout << endl;
 		}
 		void virtual send() {
-			cout << "Network Error!!! Please try again!!" << endl;
-			cout << endl;
+		}
+		void setBalance(float a) {
+			amount = a;
+
+		}
+		float getBalance() {
+			return amount;
+
 		}
 
 };
 class tele2_card:public Prepaid_card
 {
 	
-float sms_cost=0;
-public:
-	tele2_card(){}
-	tele2_card(float a, float b) 
-	{
-		sms_cost = a;
-		amount = b;
-}
-	void virtual send() {
-		cout << "SMS SENT!!!!" <<endl;
-		cout<<"Your SMS cost is 1.5 Kunas" << endl;
+	float sms_cost = 0;
+	public:
+		tele2_card() { sms_cost = 0; Prepaid_card(); }
+		tele2_card( float a, float b)
+		{
+			sms_cost = a;
+			setBalance( b );
+		}
+		void virtual send() {		
 
-		amount = amount - sms_cost;
-		cout << "Remaining Balance is : " << amount << endl;
-		cout << "\n" << endl;
-	}
+			setBalance (getBalance() - sms_cost );
+			cout << "SMS SENT!!!!" << endl;
+			cout << "Your SMS cost is 1.5 Kunas" << endl;
+			cout << "Remaining Balance is : " << getBalance() << endl;
+			cout << "\n" << endl;
+		}
 
 };
 
@@ -57,13 +63,12 @@ int main()
 	HT_HR1.send();
 
 	Prepaid_card* HT_HR=new tele2_card(1.5, 100);
-
-	HT_HR->send();
-
-	HT_HR->check_Balance();
-	HT_HR->add_Balance(10);
 	HT_HR->check_Balance();
 	HT_HR->send();
+
+	HT_HR->add_Balance(10);
+	HT_HR->check_Balance();
+	HT_HR->send();
 	HT_HR->send();
 	HT_HR->send();
 	HT_HR->send();
@@ -72,6 +77,7 @@ int main()
 	HT_HR->send();
 	HT_HR->send();
 	HT_HR->add_Balance(10);
+
 	HT_HR->check_Balance();
 
 	return 0;
