@@ -8,7 +8,7 @@ class Die
 public:  
     Die() { setDie(1);}
     Die(int x) { setDie(x); }
-    void rolling()
+    void Roll()
     {
         dice = ((rand() % 6 + 1)); 
     }
@@ -43,7 +43,7 @@ int main()
     Die roll[10];
     for (int i = 0; i < 10; i++)
     {
-        roll[i].rolling();
+        roll[i].Roll();
     }
 
     for (int i = 0; i < 10; i++)

@@ -4,7 +4,7 @@ using namespace std;
 class Prepaid_card {
 private: float amount;
 
-public: Prepaid_card() { amount = 0; }
+public: 
 		Prepaid_card(float x)
 		 {
 		  amount = x;
@@ -40,11 +40,10 @@ class tele2_card:public Prepaid_card
 	
 	float sms_cost = 0;
 	public:
-		tele2_card() { sms_cost = 0; Prepaid_card(); }
-		tele2_card( float a, float b)
+
+		tele2_card( float a, float b):Prepaid_card (b)
 		{
 			sms_cost = a;
-			setBalance( b );
 		}
 		void virtual send() {		
 
@@ -59,8 +58,6 @@ class tele2_card:public Prepaid_card
 
 int main()
 {
-	Prepaid_card HT_HR1;
-	HT_HR1.send();
 
 	Prepaid_card* HT_HR=new tele2_card(1.5, 100);
 	HT_HR->check_Balance();
