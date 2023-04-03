@@ -1,2 +1,0 @@
-D:\C++\Task1.1\Debug\Task1.1.exe
-D:\C++\Task1.1\Debug\Task1.1.pdb
